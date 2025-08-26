@@ -1,8 +1,6 @@
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.Comparator;
 
@@ -11,7 +9,9 @@ public class ImageNameModifier {
     public static void main(String[] args) {
         // 指定文件夹路径
         
-        String directoryPath = "写文件的地址";
+        String directoryPath = "H:\\私人物品\\家乡\\本子\\忍冬";
+        String prefix = "rd_";
+         
         File directory = new File(directoryPath);
 
         // 获取文件夹中的所有文件
@@ -29,7 +29,7 @@ public class ImageNameModifier {
         // 重命名文件
         for (int i = 0; i < files.length; i++) {
             File file = files[i];
-            String newFileName = String.format("%04d.jpg", i + 1);
+            String newFileName = String.format("%s%04d.jpg",prefix, i + 1);
             File newFile = new File(directory, newFileName);
 
             try {
